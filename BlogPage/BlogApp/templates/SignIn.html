@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <style>
+    .box{
+            position: absolute;
+            left:37%;
+            top: 20%;
+            width: 400px;
+            height: 250px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.308);
+        }
+        a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            border-radius: 10px;
+            padding:10px;
+            text-decoration: none;
+            background-color: #264b5d;
+            color:aliceblue;
+        }
+        a.button:hover{
+            background-color: #32627a;
+        }
+        a.pwd{
+            text-decoration: none;
+            color:aliceblue;
+        }
+        form.top{
+            font-size:20px; background-color:#264b5d; color:aliceblue; padding:13px; text-align:center;border-radius: 10px;
+        
+        }
+        .cust{
+           background-color:rgba(0, 0, 0, 0.219) ; height:25px;width:370px; color:aliceblue; border: 0.1px solid white; border-radius:10px;
+        }
+        li{
+            float: left;
+        }
+        li a {
+            display: block;
+            color: wheat;
+            text-align: center;
+            padding: 18px 30px;
+            text-decoration: none;
+          }
+          
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+            margin: -8px;
+            padding: 0;
+            background-color:#264b5d;
+          }
+          li a:hover {
+            background-color: #32627a;
+          }
+    </style>
+    
+    <title>B.TECH </title>
+</head>
+<body style="background-color:rgba(0, 0, 0, 0.884);">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li style="float:right;"><a href="{% url 'signup' %}">Sign Up</a></li>
+    </ul>
+
+
+
+    
+    <div class="box">
+        <form class="top">User Login Page</form><form >
+       <pre> <label style="color:aliceblue;font-size:15px;" for="username"> Username: </label>
+  <input class="cust" type="text" id="username" name="username" value="">
+  
+  <label style="color:aliceblue;font-size:15px;" for="Password">Password:</label>
+  <input class="cust" type="Password" name="Password" id="Password" value="">
+  
+       <a href="#" class="button">LOG IN</a>                 <a href="#" class="pwd">Forget Password?</a></pre></div>
+       
+    
+  </form>
+</body>
+</html>

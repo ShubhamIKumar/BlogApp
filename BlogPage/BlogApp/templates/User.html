@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ded{
+            text-align: center;
+        }
+        li{
+            float: left;
+        }
+        li a {
+            display: block;
+            color: wheat;
+            text-align: center;
+            padding: 18px 30px;
+            text-decoration: none;
+          }
+          
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+            margin: -8px;
+            padding: 0;
+            background-color:#264b5d;
+          }
+          li a:hover {
+            background-color: #32627a;
+          }
+          body{
+            background-color:rgba(0, 0, 0, 0.884);
+            color:white;
+          }
+          .dropbtn {
+  background-color: #264b5d;
+  color: white;
+  padding: 18px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #32627a;
+}
+
+.dropdown {
+  position:absolute;
+  right: 4px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 4px;
+  
+  background-color: rgba(32, 31, 31, 0.884);
+  min-width: 160px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+    color:wheat;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color:rgba(0, 0, 0, 0.884); }
+
+.show {display: block;}
+    </style>
+</head>
+<body >
+  {% csrf_token %}
+    <ul>
+        <span class="navbar-burger burger" target="navbarMenu"></span>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">My Blogs</a></li>
+        <li style="float:right;"><div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Welcome {{request.user}}<i class="fa fa-caret-down"></i></button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Your Profile</a>
+            <a href="/logout">Sign Out</a>
+            <a href="#">Contact Us</a>
+            <a href="#">About</a>
+        
+             
+            </div></li>
+        
+    </ul>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+    <div class="ded">
+    <h2>Welcome to CODEd</h2>
+    <pre>
+        <textarea name="Blog Header" cols="60" rows="2" style="font-size:20px; color:white;background-color: #264b5d;">Header for blog</textarea>
+
+        <textarea name="Blog Info" cols="40" rows="8" style="font-size:30px; color:white;background-color: #264b5d;">Write Blog..</textarea>
+
+        <input style="font-size:20px;" type="file" id="myFile" name="filename">  <input style="font-size:20px; " type="button" name="button" value="Post"/>
+    </pre>
+</div>
+    
+</body>
+</html>
